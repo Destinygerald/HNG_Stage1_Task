@@ -33,7 +33,6 @@ app.get('/api/hello', async(req, res) => {
 		  .then(response => response.json())
 		  .then(data => {
 		  	resData.location = data?.city?.name
-		    console.log(resData);
 		  })
 
 		return res.status(200).json({
