@@ -29,10 +29,10 @@ app.get('/api/hello', async(req, res) => {
 			})
 		}
 
-		await fetch(`https://api.geoapify.com/v1/ipinfo?ip=${ip}&apiKey=${process.env.API_KEY}`)  
+		await fetch(`http://ipinfo.io/${ip}/json`)
 		  .then(response => response.json())
 		  .then(data => {
-		  	resData.location = data?.city?.name
+		  	resData.location = data?.city
 		  })
 
 		return res.status(200).json({
